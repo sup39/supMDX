@@ -8,7 +8,7 @@ import '../styles/index.sass';
 const hx = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
 const extendedHx = Object.fromEntries(hx.map(H => [H,
   ({children, id, ...props}: React.ComponentProps<(typeof hx)[number]>) => <H id={id} {...props}>
-    {id && <a className="anchor" />}
+    {id && <a className="anchor" href={'#'+encodeURIComponent(id)} />}
     {children}
   </H>,
 ]));
