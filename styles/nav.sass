@@ -1,0 +1,107 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2022 sup39
+
+$yellow: #ff9
+$bd: var(--bd)
+
+/** mobile */
+nav
+  width: 100%
+  background: #28282e
+  border-bottom: 1px solid var(--bd)
+  border-right: none
+  padding: 1.25em 1.25em
+
+  header
+    display: flex
+    justify-content: center
+    position: relative
+
+    .menu-toggle
+      position: absolute
+      top: 50%
+      right: 1em
+      transform: translate(-50%, -50%)
+
+  .nav-root
+    height: 0
+    // opacity: 0
+    visibility: hidden
+
+  *
+    padding: 0
+    margin: 0
+
+  a
+    display: block
+    color: #eee
+
+  .nav-dir-child
+    padding-left: 1em
+
+  .nav-here, .nav-here a,
+  .nav-here + ul, .nav-here + ul a
+    color: $yellow
+  ul
+    list-style-type: square
+    margin-block-start: 0
+    margin-block-end: 0
+    padding-inline-start: 24px
+
+  .nav-root
+    > div
+      border-top: 1px solid $bd
+      padding: 0.5em 0.5em
+
+    /** heading list */
+    > ul
+      border-top: 1px solid $bd
+      padding-top: 0.75em
+      // margin-bottom: 0.5em
+
+
+  /** here */
+  .nav-here
+    font-weight: bold
+
+
+  /** container of entry */
+  .nav-entry
+    display: flex
+    align-items: center
+
+    > a
+      flex-grow: 1
+
+    > svg
+      stroke: #9ff
+      fill: none
+      stroke-width: 1
+      stroke-linecap: round
+      stroke-linejoin: round
+      width: 1.2em
+      height: 1.2em
+      cursor: pointer
+      border-radius: 50%
+    > svg:hover
+      background: #18181e
+
+
+  /** folder hide */
+  .nav-dir-child
+    display: none
+
+  .nav-fold-open > .nav-dir-child
+    display: block
+
+  .nav-fold-open > .nav-entry > svg
+    rotate: 180deg
+
+nav.open
+  header
+    margin-bottom: 1.25em
+  .nav-root
+    height: auto
+    opacity: 1
+    visibility: visible
+    // transition: opacity 0.4s ease-in-out

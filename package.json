@@ -1,0 +1,67 @@
+{
+  "name": "supMDX",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.md,.mdx ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "next/core-web-vitals",
+      "@sup39/typescript"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "rules": {
+          "no-undef": "off"
+        }
+      },
+      {
+        "files": [
+          "*.mdx"
+        ],
+        "extends": [
+          "plugin:mdx/recommended"
+        ],
+        "rules": {
+          "no-trailing-spaces": "off",
+          "indent": "off"
+        }
+      }
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "@mdx-js/loader": "^2.1.5",
+    "@mdx-js/react": "^2.1.5",
+    "@next/mdx": "^13.0.2",
+    "@sup39/rehype-mdx-component-wrapper": "^0.1.0",
+    "@sup39/rehype-mdx-export-headings": "^0.1.1",
+    "next": "^13.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remark-frontmatter": "^4.0.1",
+    "remark-mdx-frontmatter": "^2.1.1",
+    "sass": "^1.56.0",
+    "yaml-loader": "^0.8.0"
+  },
+  "devDependencies": {
+    "@sup39/eslint-config-typescript": "^0.1.2",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.24",
+    "eslint": "^8.26.0",
+    "eslint-config-next": "^13.0.2",
+    "eslint-plugin-mdx": "^2.0.5",
+    "typescript": "4.8.4"
+  }
+}
