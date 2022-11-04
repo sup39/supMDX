@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Nav from './Nav';
+import Footer from './Footer';
 import MetaInfo from './MetaInfo';
 import type {HeadingInfo} from '@sup39/rehype-mdx-export-headings';
 
@@ -27,9 +28,12 @@ export default function MDXRoot({children, data: {pathname}, meta={}, headings}:
     </Head>
     <Nav pathname={pathname} headings={headings} />
     <main>
-      {h1 ? <h1>{h1}</h1> : <></>}
-      <MetaInfo data={meta} />
-      {children}
+      <article>
+        {h1 ? <h1>{h1}</h1> : <></>}
+        <MetaInfo data={meta} />
+        {children}
+      </article>
     </main>
+    <Footer />
   </>;
 }

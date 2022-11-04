@@ -1,5 +1,7 @@
-startYear: 2022
-siteAuthor: <Edit author name in supMDX.yml>
+site:
+  startYear: 2022
+  author: <Edit author name in supMDX.yml>
+  name: <Site Name>
 metaFields:
   - {prop: author, label: 'Author: '}
   - {prop: createdAt, label: 'Created at '}

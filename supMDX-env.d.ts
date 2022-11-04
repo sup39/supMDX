@@ -1,8 +1,11 @@
 declare module '#config' {
   import type {NavEntry} from '@/Nav';
   type Config = {
-    startYear: number
-    siteAuthor?: string
+    site: {
+      startYear: number
+      author: string
+      name: string
+    }
     metaFields?: {label: string, prop: string}[]
     nav: NavEntry[]
   };
