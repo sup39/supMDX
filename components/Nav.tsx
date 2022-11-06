@@ -13,9 +13,11 @@ export type NavEntryInfo = {
 export function NavEntry<Body, >({
   entry: {name, link, children}, dir, here, children: childrenJSX,
 }: {entry: NavEntryInfo, dir: string, here: string, children?: Body}) {
-  const [toggle, setToggle] = useState(false);
   const href = dir+link;
   const isHere = href.replace(/\/$/, '')===here; // remove trailing slash
+  const isRHere = isHere || here.startsWith(href); // here or is children
+
+  const [toggle, setToggle] = useState(isRHere);
   const entryCls = 'nav-entry'+(isHere ? ' nav-here' : '');
   return children?.length ? <div className={'nav-dir'+(toggle ? ' nav-fold-open' : '')}><>
     <div className={entryCls}>
